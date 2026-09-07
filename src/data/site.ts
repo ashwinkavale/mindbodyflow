@@ -4,6 +4,7 @@ export const navItems = [
   { label: "The method", href: "#method" },
   { label: "Programs", href: "#programs" },
   { label: "ROAR challenge", href: "#roar" },
+  { label: "Testimonials & videos", href: "#testimonials" },
   { label: "Coach", href: "#coach" },
 ];
 
@@ -40,6 +41,7 @@ export const contact = {
   email: "amitkavale@gmail.com",
   location: "Mind Body Flow",
   instagram: "https://www.instagram.com/amitkavale",
+  youtube: "https://www.youtube.com/@amitkavale2466",
 };
 
 export const coach = {
