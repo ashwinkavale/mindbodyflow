@@ -35,10 +35,10 @@ export const benefits = [
 
 export const contact = {
   phone: "+91 98203 85016",
-  whatsapp: "https://wa.me/919820385016?text=Hi%20Amit%2C%20I%20am%20interested%20in%20the%20Gold%27s%20Gym%20Rotational%20Training%20Program.",
+  whatsapp: "https://wa.me/919820385016?text=Hi%20Amit%2C%20I%20am%20interested%20in%20the%20Mind%20Body%20Flow%20Rotational%20Training%20Program.",
   registrationForm: "https://forms.gle/replace-with-your-google-form-link",
   email: "amitkavale@gmail.com",
-  location: "Gold’s Gym Mumbai",
+  location: "Mind Body Flow",
   instagram: "https://www.instagram.com/amitkavale",
 };
 
@@ -58,4 +58,3 @@ export const trust = [
   { label: "Progressive", icon: Trophy },
   { label: "01-hour sessions", icon: Timer },
 ];
-
