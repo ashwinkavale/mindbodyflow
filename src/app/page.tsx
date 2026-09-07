@@ -1,65 +1,49 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight, Check, Mail, MapPin, Phone, Play, ShieldCheck } from "lucide-react";
+import { MobileNav } from "@/components/MobileNav";
+import { benefits, coach, contact, methodCards, navItems, programLevels, stats } from "@/data/site";
+
+function Button({ href, children, dark = false }: { href: string; children: React.ReactNode; dark?: boolean }) {
+  return <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className={`inline-flex h-12 items-center justify-center gap-2 rounded-full px-6 text-sm font-bold transition hover:-translate-y-0.5 ${dark ? "bg-[#141414] text-white hover:bg-[#292929]" : "bg-[#d9a441] text-[#141414] hover:bg-[#e8b858]"}`}>{children}<ArrowUpRight size={17} /></a>;
+}
+
+function Header() {
+  return <header className="absolute inset-x-0 top-0 z-40 text-white"><div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
+    <Link href="#" className="flex items-center gap-3"><span className="grid size-10 place-items-center rounded-full border border-[#d9a441] text-lg font-black text-[#d9a441]">G</span><span className="text-xs font-bold leading-tight tracking-[.2em]">GOLD’S GYM<br /><span className="font-normal tracking-[.12em] text-white/55">ROTATIONAL TRAINING</span></span></Link>
+    <nav className="hidden items-center gap-7 md:flex">{navItems.map(item => <Link key={item.href} href={item.href} className="text-sm font-medium text-white/70 transition hover:text-white">{item.label}</Link>)}</nav>
+    <div className="hidden md:block"><Button href={contact.whatsapp}>Talk to the coach</Button></div><div className="md:hidden"><MobileNav /></div>
+  </div></header>;
+}
+
+function SectionTitle({ eyebrow, title, text, light = false }: { eyebrow: string; title: string; text: string; light?: boolean }) {
+  return <div className="max-w-2xl"><p className={`text-xs font-bold uppercase tracking-[.22em] ${light ? "text-[#d9a441]" : "text-[#9a6c18]"}`}>{eyebrow}</p><h2 className={`display mt-4 text-4xl leading-[.98] sm:text-6xl ${light ? "text-white" : "text-[#141414]"}`}>{title}</h2><p className={`mt-5 max-w-xl text-base leading-7 ${light ? "text-white/60" : "text-black/58"}`}>{text}</p></div>;
+}
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+  return <>
+    <Header />
+    <main>
+      <section className="relative overflow-hidden bg-[#141414] text-white"><div className="absolute inset-0 opacity-25"><Image src="/images/header.jpeg" alt="" fill priority className="object-cover" /></div><div className="absolute inset-0 bg-gradient-to-r from-[#141414] via-[#141414]/90 to-[#141414]/45" /><div className="relative mx-auto grid min-h-[720px] max-w-7xl items-end gap-12 px-5 pb-16 pt-36 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:px-8 lg:pb-20">
+        <div><p className="text-xs font-bold uppercase tracking-[.25em] text-[#d9a441]">Gold’s Gym Mumbai · New member program</p><h1 className="display mt-5 max-w-4xl text-6xl leading-[.88] sm:text-8xl">Train the<br /><em className="text-[#d9a441]">turn.</em></h1><p className="mt-8 max-w-xl text-lg leading-8 text-white/68">A skill-based rotational training program built around Indian Clubs, Mace, and Rope Flow. Move with more control, strength, and intent.</p><div className="mt-9 flex flex-col gap-3 sm:flex-row"><Button href="#programs">Explore the program</Button><a href="#method" className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/25 px-6 text-sm font-bold text-white hover:bg-white/10">See how it works <Play size={15} /></a></div></div>
+        <div className="relative hidden lg:block"><div className="ml-auto max-w-sm border border-white/15 bg-white/5 p-5 backdrop-blur-sm"><div className="relative h-[360px] overflow-hidden"><Image src="/images/mace3.jpeg" alt="Mace rotational training" fill className="object-cover" /></div><div className="mt-5 flex items-end justify-between"><div><p className="text-xs uppercase tracking-[.18em] text-[#d9a441]">The premise</p><p className="mt-2 text-xl font-semibold">Warrior movement<br />for modern fitness.</p></div><span className="text-4xl text-[#d9a441]">↗</span></div></div></div>
+      </div></section>
+
+      <section className="bg-[#d9a441] px-5 py-8 lg:px-8"><div className="mx-auto grid max-w-7xl grid-cols-2 gap-y-7 sm:grid-cols-4">{stats.map(stat => <div key={stat.label} className="border-l border-black/20 pl-4 first:border-0 sm:first:border-l"><p className="text-3xl font-semibold tracking-tight">{stat.value}</p><p className="mt-1 text-xs font-bold uppercase tracking-[.12em] text-black/55">{stat.label}</p></div>)}</div></section>
+
+      <section id="method" className="bg-[#f2eee5] px-5 py-20 lg:px-8 lg:py-28"><div className="mx-auto max-w-7xl"><SectionTitle eyebrow="The method" title="Three tools. One more capable body." text="Rotational training has roots in traditional warrior systems. This program brings those circular, asymmetrical, and rhythmic patterns into a modern Gold’s Gym setting." /><div className="mt-14 grid gap-5 md:grid-cols-3">{methodCards.map(card => <article key={card.title} className="group overflow-hidden bg-[#fbfaf7]"><div className="relative h-64 overflow-hidden"><Image src={card.image} alt={card.title} fill className="object-cover transition duration-700 group-hover:scale-105" /><span className="absolute left-4 top-4 grid size-10 place-items-center rounded-full bg-[#d9a441] text-sm font-bold">{card.index}</span></div><div className="p-6"><div className="flex items-center justify-between"><p className="text-xs font-bold uppercase tracking-[.17em] text-[#9a6c18]">{card.kicker}</p><card.icon size={21} className="text-[#9a6c18]" /></div><h3 className="display mt-4 text-3xl">{card.title}</h3><p className="mt-3 text-sm leading-6 text-black/58">{card.text}</p></div></article>)}</div></div></section>
+
+      <section id="programs" className="bg-[#fbfaf7] px-5 py-20 lg:px-8 lg:py-28"><div className="mx-auto max-w-7xl"><div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end"><SectionTitle eyebrow="The pathway" title="Start where you are. Keep going." text="The program is designed as a clear progression: build the base, add complexity, then bring all three tools together." /><Button href={contact.whatsapp} dark>Ask about your batch</Button></div><div className="mt-14 grid gap-px overflow-hidden bg-black/10 lg:grid-cols-3">{programLevels.map(level => <article key={level.number} className="bg-[#fbfaf7] p-7 sm:p-9"><div className="flex items-center justify-between"><span className="text-5xl font-semibold tracking-[-.08em] text-[#d9a441]">{level.number}</span><span className="rounded-full border border-black/15 px-3 py-1 text-[10px] font-bold uppercase tracking-[.16em]">Progression</span></div><h3 className="mt-12 text-2xl font-semibold">{level.label}</h3><p className="mt-4 min-h-24 text-sm leading-6 text-black/58">{level.text}</p><ul className="mt-7 grid gap-3 border-t border-black/10 pt-6">{level.features.map(item => <li key={item} className="flex gap-2 text-sm"><Check size={17} className="mt-0.5 text-[#9a6c18]" />{item}</li>)}</ul></article>)}</div><div className="mt-7 flex flex-col gap-3 border-t border-black/10 pt-5 text-sm text-black/55 sm:flex-row sm:items-center sm:justify-between"><span>Batch size: minimum 5 · maximum 12 participants</span><span>Equipment provided by Gold’s Gym</span><span>Each session: 1 hour</span></div></div></section>
+
+      <section id="roar" className="overflow-hidden bg-[#141414] px-5 py-20 text-white lg:px-8 lg:py-28"><div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center"><div><SectionTitle light eyebrow="The member challenge" title="ROAR Simulation Protocol" text="A repeatable challenge inspired by the ROAR Games. Build endurance, functional strength, rotational control, pacing, and mental resilience." /><div className="mt-8 flex flex-wrap items-center gap-2 text-sm font-semibold"><span className="rounded-full bg-[#d9a441] px-4 py-2 text-[#141414]">Run</span><span className="text-[#d9a441]">→</span><span className="rounded-full border border-white/20 px-4 py-2">Mace station</span><span className="text-[#d9a441]">→</span><span className="rounded-full border border-white/20 px-4 py-2">Repeat</span><span className="text-[#d9a441]">→</span><span className="rounded-full border border-white/20 px-4 py-2">Finish</span></div><p className="mt-8 text-sm text-white/55">Charges per session: <strong className="text-white">INR 800 per head</strong></p></div><div className="relative min-h-[360px] overflow-hidden"><Image src="/images/roar.jpeg" alt="ROAR-inspired fitness challenge" fill className="object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" /><div className="absolute bottom-6 left-6"><p className="text-xs font-bold uppercase tracking-[.2em] text-[#d9a441]">Performance format</p><p className="mt-2 text-2xl font-semibold">Scalable. Measurable. Repeatable.</p></div></div></div></section>
+
+      <section className="bg-[#d9a441] px-5 py-20 lg:px-8"><div className="mx-auto max-w-7xl"><SectionTitle eyebrow="Why it belongs at Gold’s Gym" title="A fresh reason to train." text="Indian Clubs, Mace, and Rope Flow are visually engaging, skill-based, and accessible. They add a premium, experiential layer to the existing fitness ecosystem." /><div className="mt-12 grid gap-8 border-t border-black/20 pt-8 sm:grid-cols-2 lg:grid-cols-4">{benefits.map(item => <article key={item.title}><item.icon size={24} /><h3 className="mt-5 text-lg font-semibold">{item.title}</h3><p className="mt-2 text-sm leading-6 text-black/60">{item.text}</p></article>)}</div></div></section>
+
+      <section id="coach" className="bg-[#f2eee5] px-5 py-20 lg:px-8 lg:py-28"><div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.75fr_1.25fr] lg:items-center"><div className="relative h-[480px] overflow-hidden bg-[#141414]"><Image src={coach.image} alt={coach.name} fill className="object-cover" /></div><div><SectionTitle eyebrow="Your coach" title={`${coach.name}. Learn the turn.`} text={coach.intro} /><div className="mt-9 grid gap-3 sm:grid-cols-2">{coach.credentials.map(item => <div key={item} className="flex items-center gap-3 border-b border-black/10 pb-3 text-sm"><ShieldCheck size={17} className="text-[#9a6c18]" />{item}</div>)}</div><p className="mt-8 text-sm font-semibold text-black/55">Sporting background: <span className="font-normal">{coach.sports}</span></p></div></div></section>
+
+      <section id="contact" className="bg-[#141414] px-5 py-20 text-white lg:px-8 lg:py-24"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_auto] lg:items-end"><div><p className="text-xs font-bold uppercase tracking-[.22em] text-[#d9a441]">Ready to begin?</p><h2 className="display mt-4 max-w-3xl text-5xl leading-[.95] sm:text-7xl">Bring more movement<br />to your training.</h2><p className="mt-6 max-w-xl text-white/55">Register your interest or speak directly with Amit about upcoming batches at Gold’s Gym Mumbai.</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><Button href={contact.whatsapp}>WhatsApp Amit</Button><Button href={contact.registrationForm} dark>Registration form</Button></div></div><div className="grid gap-4 text-sm text-white/60"><a href={`tel:${contact.phone}`} className="flex items-center gap-3 hover:text-white"><Phone size={17} className="text-[#d9a441]" />{contact.phone}</a><a href={`mailto:${contact.email}`} className="flex items-center gap-3 hover:text-white"><Mail size={17} className="text-[#d9a441]" />{contact.email}</a><span className="flex items-center gap-3"><MapPin size={17} className="text-[#d9a441]" />{contact.location}</span></div></div></section>
+    </main>
+    <footer className="bg-[#0c0c0c] px-5 py-7 text-xs text-white/45 lg:px-8"><div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"><span>© 2026 Gold’s Gym Rotational Training Program</span><span>Consult your doctor before starting any fitness program.</span></div></footer>
+  </>;
 }
+
