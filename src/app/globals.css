@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
-:root { --ink: #141414; --gold: #d9a441; --cream: #f2eee5; --paper: #fbfaf7; }
+:root { --ink: #141414; --accent: #d9a441; --cream: #f2eee5; --paper: #fbfaf7; }
 @theme inline { --color-background: var(--paper); --color-foreground: var(--ink); --font-sans: Arial, Helvetica, sans-serif; --font-mono: "Courier New", monospace; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 body { margin: 0; background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif; }
-::selection { background: var(--gold); color: var(--ink); }
+::selection { background: var(--accent); color: var(--ink); }
 .display { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.055em; }
