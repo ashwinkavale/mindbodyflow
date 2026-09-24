@@ -1,5 +1,16 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## AI training assistant
+
+The floating assistant loads its knowledge from the Markdown files in [`public/skills`](public/skills) and currently calls Gemini directly from the browser. To enable it locally, copy `.env.example` to `.env.local` and add a Gemini API key:
+
+```bash
+NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key_here
+NEXT_PUBLIC_GEMINI_MODEL=gemini-3.6-flash
+```
+
+This UI-only setup exposes the key to visitors. Move the Gemini request into a server API route before using the assistant in production.
+
 ## Getting Started
 
 First, run the development server:
