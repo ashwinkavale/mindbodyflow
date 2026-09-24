@@ -5,63 +5,30 @@ import { Bot, MessageCircle, Send, X } from "lucide-react";
 
 type Message = { role: "user" | "model"; text: string };
 
-const skillFiles = ["/skills/training-programs.md", "/skills/website-guide.md"];
-const defaultModel = "gemini-3.6-flash";
-
 const welcome: Message = {
   role: "model",
   text: "Hi, I’m the Mind Body Flow assistant. Ask me about the training tools, courses, ROAR challenge, sessions, or how to contact Amit.",
 };
 
-async function loadKnowledge() {
-  const responses = await Promise.all(skillFiles.map((file) => fetch(file)));
-  if (responses.some((response) => !response.ok)) throw new Error("Knowledge files could not be loaded.");
-  return (await Promise.all(responses.map((response) => response.text()))).join("\n\n---\n\n");
-}
-
-async function askGemini(messages: Message[], knowledge: string) {
-  const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
-  if (!apiKey) throw new Error("Add NEXT_PUBLIC_GEMINI_API_KEY to your local environment to enable the assistant.");
-
-  const contents = messages.map(({ role, text }) => ({ role, parts: [{ text }] }));
-  const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${process.env.NEXT_PUBLIC_GEMINI_MODEL || defaultModel}:generateContent`, {
+async function askAssistant(messages: Message[]) {
+  const response = await fetch("/api/assistant", {
     method: "POST",
-    headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey },
-    body: JSON.stringify({
-      system_instruction: { parts: [{ text: `You are the website assistant for Mind Body Flow Rotational Training. Use only the knowledge below. Be concise, warm, and practical. Answer only questions about this website, its training programs, or closely related contact and safety information. If the answer is not in the knowledge, say so and direct the visitor to contact Amit. Never invent facts.\n\nKNOWLEDGE:\n${knowledge}` }] },
-      contents,
-      generationConfig: { temperature: 0.3, maxOutputTokens: 500 },
-    }),
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ messages }),
   });
 
   const data = await response.json();
-  if (!response.ok) throw new Error(data.error?.message || "Gemini could not answer right now.");
-  return data.candidates?.[0]?.content?.parts?.map((part: { text?: string }) => part.text || "").join("").trim() || "I’m sorry, I couldn’t find an answer. Please contact Amit directly.";
+  if (!response.ok) throw new Error(data.error || "Gemini could not answer right now.");
+  return data.answer as string;
 }
 
 export function AssistantWidget() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([welcome]);
-  const [knowledge, setKnowledge] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const endRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!open || knowledge) return;
-    let active = true;
-    loadKnowledge()
-      .then((content) => {
-        if (active) setKnowledge(content);
-      })
-      .catch(() => {
-        if (active) setError("I couldn’t load my training information. Please try again.");
-      });
-    return () => {
-      active = false;
-    };
-  }, [open, knowledge]);
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -77,7 +44,7 @@ export function AssistantWidget() {
     setError("");
     setLoading(true);
     try {
-      const answer = await askGemini(nextMessages.slice(1), knowledge);
+      const answer = await askAssistant(nextMessages.slice(1));
       setMessages((current) => [...current, { role: "model", text: answer }]);
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "Something went wrong. Please try again.");
