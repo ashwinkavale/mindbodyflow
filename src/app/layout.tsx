@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Rotational Training | Gold’s Gym Mumbai",
-  description: "A skill-based rotational training program for Gold’s Gym members, led by Amit Kavale.",
+  title: "Mind Body Flow | Rotational Training",
+  description: "A skill-based rotational training program by Mind Body Flow, led by Amit Kavale.",
 };
 
 export default function RootLayout({
