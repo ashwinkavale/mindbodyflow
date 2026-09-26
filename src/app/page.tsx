@@ -48,3 +48,4 @@ export default function Home() {
     <footer className="bg-[#0c0c0c] px-5 py-7 text-xs text-white/45 lg:px-8"><div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"><span>© 2026 Mind Body Flow Rotational Training Program</span><span>Consult your doctor before starting any fitness program.</span></div></footer>
   </>;
 }
+
