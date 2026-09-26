@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight, Check, Mail, MapPin, Phone, Play, ShieldCheck } from "lucide-react";
 import { MobileNav } from "@/components/MobileNav";
 import { TestimonialsVideos } from "@/components/TestimonialsVideos";
+import { AssistantWidget } from "@/components/AssistantWidget";
 import { benefits, coach, contact, methodCards, navItems, programLevels, stats } from "@/data/site";
 
 function Button({ href, children, dark = false }: { href: string; children: React.ReactNode; dark?: boolean }) {
@@ -45,6 +46,7 @@ export default function Home() {
       <section id="contact" className="bg-[#141414] px-5 py-20 text-white lg:px-8 lg:py-24"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_auto] lg:items-end"><div><p className="text-xs font-bold uppercase tracking-[.22em] text-[#d9a441]">Ready to begin?</p><h2 className="display mt-4 max-w-3xl text-5xl leading-[.95] sm:text-7xl">Bring more movement<br />to your training.</h2><p className="mt-6 max-w-xl text-white/55">Register your interest or speak directly with Amit about upcoming Mind Body Flow sessions.</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><Button href={contact.whatsapp}>WhatsApp Amit</Button><Button href={contact.registrationForm} dark>Registration form</Button></div></div><div className="grid gap-4 text-sm text-white/60"><a href={`tel:${contact.phone}`} className="flex items-center gap-3 hover:text-white"><Phone size={17} className="text-[#d9a441]" />{contact.phone}</a><a href={`mailto:${contact.email}`} className="flex items-center gap-3 hover:text-white"><Mail size={17} className="text-[#d9a441]" />{contact.email}</a><span className="flex items-center gap-3"><MapPin size={17} className="text-[#d9a441]" />{contact.location}</span></div></div></section>
       <TestimonialsVideos />
     </main>
+    <AssistantWidget />
     <footer className="bg-[#0c0c0c] px-5 py-7 text-xs text-white/45 lg:px-8"><div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"><span>© 2026 Mind Body Flow Rotational Training Program</span><span>Consult your doctor before starting any fitness program.</span></div></footer>
   </>;
 }
