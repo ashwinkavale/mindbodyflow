@@ -4,6 +4,10 @@
 
 Mind Body Flow is a skill-based rotational training program led by Amit Kavale. It uses Indian Clubs, Mace, and Rope Flow to help participants move with more control, strength, rhythm, and intent.
 
+The Rotational Training System (RTS) is a progressive methodology built around the body's ability to rotate, shift, reach, balance, transfer force, and coordinate movement. Its four pillars are rotational strength, asymmetric loading, flow-based movement, and mind-body connection.
+
+Skill-Based Fitness adds learning and mastery to conventional fitness. Participants learn movement skills, develop proficiency, progress to greater complexity, and build confidence through a clear Learn → Progress → Evolve pathway.
+
 The program is coach-led, progressive, skill-based, and designed for small batches of 5 to 12 participants. Each session is 1 hour. Equipment is provided by Mind Body Flow.
 
 ## The three tools
@@ -41,6 +45,8 @@ The ROAR Simulation Protocol is a repeatable challenge inspired by the ROAR Game
 ## Benefits
 
 The program develops movement quality, rotational strength, coordination, force transfer, asymmetrical loading, acceleration and deceleration, and long-term engagement through measurable skill-based challenges.
+
+Skill-Based Fitness is engaging, progressive, multidimensional, adaptable, complementary to conventional training, and experiential. It is suitable for beginners, fitness enthusiasts, and athletes with appropriate progression.
 
 ## Safety
 

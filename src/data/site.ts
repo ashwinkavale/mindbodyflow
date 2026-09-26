@@ -2,9 +2,11 @@ import { Activity, Dumbbell, Footprints, Gauge, Hand, Layers3, Move3d, ShieldChe
 
 export const navItems = [
   { label: "The method", href: "#method" },
+  { label: "Skill-based fitness", href: "#skill-based-fitness" },
   { label: "Programs", href: "#programs" },
   { label: "ROAR challenge", href: "#roar" },
   { label: "Testimonials & videos", href: "#testimonials" },
+  { label: "FAQs", href: "#faqs" },
   { label: "Coach", href: "#coach" },
 ];
 
@@ -34,11 +36,38 @@ export const benefits = [
   { title: "Built to engage", text: "Distinctive tools and measurable challenges create new reasons to keep showing up.", icon: Sparkles },
 ];
 
+export const pillars = [
+  { title: "Rotational strength", text: "Develop spinal strength, torque, and elastic power for everyday movement, resilience, and performance." },
+  { title: "Asymmetric loading", text: "Build stabilising strength, grip endurance, and body control while addressing left-right loading differences." },
+  { title: "Flow-based movement", text: "Use seamless, rhythmic transitions to improve coordination, mobility, and movement efficiency." },
+  { title: "Mind-body connection", text: "Train focus, spatial awareness, timing, anticipation, and cognitive endurance through purposeful movement." },
+];
+
+export const skillBenefits = [
+  { title: "More engaging", text: "Learning new skills keeps training interesting." },
+  { title: "Progressive", text: "There is always another level to work towards." },
+  { title: "Multidimensional", text: "Combine strength, mobility, coordination, balance, and control." },
+  { title: "Adaptable", text: "Suitable for beginners, fitness enthusiasts, and athletes with appropriate progression." },
+  { title: "Complementary", text: "Works alongside conventional gym, strength, and sport-specific training." },
+  { title: "Experiential", text: "Turn training into something you learn, practise, and experience." },
+];
+
+export const faqs = [
+  { question: "What is Mind Body Flow?", answer: "Mind Body Flow is a movement and training system designed to develop mobility, coordination, strength, balance, and movement control through the Rotational Training System." },
+  { question: "What is the Rotational Training System?", answer: "RTS is a structured methodology built around the body's ability to rotate, shift, reach, balance, transfer force, and coordinate movement. It progresses from simple patterns towards greater complexity and control." },
+  { question: "What are the three tools used in RTS?", answer: "RTS uses Indian Clubs, Mace, and Rope Flow. Each tool creates a different movement experience, while all three work together in the overall system." },
+  { question: "Is rotational training suitable for beginners?", answer: "Yes. RTS starts with foundational movements and gradually increases complexity. Training can be adapted to an individual's experience, fitness level, and physical capability." },
+  { question: "Do I need to be fit or athletic to start?", answer: "No. You do not need to be an athlete or highly experienced. The program develops movement skills progressively for beginners, fitness enthusiasts, and athletes." },
+  { question: "How is RTS different from conventional gym training?", answer: "Conventional training often focuses on strength, conditioning, or specific exercises. RTS adds multidirectional movement, coordination, mobility, rhythm, balance, and rotational control." },
+  { question: "Can RTS complement my existing sport or gym routine?", answer: "Yes. RTS is designed to complement existing fitness, strength, and sport-specific training as an additional movement-training component." },
+  { question: "How do I get started?", answer: "Register your interest for 1:1 coaching or an upcoming session, then speak with Amit to find a suitable starting point for your goals and experience level." },
+];
+
 export const contact = {
-  phone: "+91 98203 85016",
+  phone: "+91 9820385016",
   whatsapp: "https://wa.me/919820385016?text=Hi%20Amit%2C%20I%20am%20interested%20in%20the%20Mind%20Body%20Flow%20Rotational%20Training%20Program.",
   registrationForm: "https://forms.gle/replace-with-your-google-form-link",
-  email: "amitkavale@gmail.com",
+  email: "mindbodyflow9@gmail.com",
   location: "Mind Body Flow",
   instagram: "https://www.instagram.com/amitkavale",
   youtube: "https://www.youtube.com/@amitkavale2466",
