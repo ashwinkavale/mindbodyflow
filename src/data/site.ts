@@ -4,7 +4,8 @@ export const navItems = [
   { label: "The method", href: "#method" },
   { label: "Skill-based fitness", href: "#skill-based-fitness" },
   { label: "Programs", href: "#programs" },
-  { label: "ROAR challenge", href: "#roar" },
+  { label: "Workshops", href: "#workshops" },
+  { label: "Workshop videos", href: "#workshop-videos" },
   { label: "Testimonials & videos", href: "#testimonials" },
   { label: "FAQs", href: "#faqs" },
   { label: "Coach", href: "#coach" },
@@ -12,15 +13,14 @@ export const navItems = [
 
 export const stats = [
   { value: "03", label: "rotational tools" },
-  { value: "5–12", label: "members per batch" },
-  { value: "01 hr", label: "per session" },
+  { value: "500+", label: "participants" },
   { value: "40+", label: "workshops delivered" },
 ];
 
 export const methodCards = [
   { index: "01", title: "Indian Clubs", kicker: "Movement + mobility", text: "Controlled circular patterns that build shoulder mobility, scapular control, grip endurance, rhythm, and cross-body coordination.", image: "/images/clubs1.jpg", icon: Waves },
   { index: "02", title: "Mace", kicker: "Load + leverage", text: "Asymmetrical loading that asks the body to manage grip, momentum, balance, stability, and rotational force under control.", image: "/images/mace2.jpeg", icon: Dumbbell },
-  { index: "03", title: "Rope Flow", kicker: "Rhythm + athleticism", text: "Continuous movement that develops footwork, timing, spinal rotation, spatial awareness, and multidirectional capacity.", image: "/images/home.jpeg", icon: Footprints },
+  { index: "03", title: "Rope Flow", kicker: "Rhythm + athleticism", text: "Continuous movement that develops footwork, timing, spinal rotation, spatial awareness, and multidirectional capacity.", image: "/images/rope.jpeg", icon: Footprints },
 ];
 
 export const programLevels = [

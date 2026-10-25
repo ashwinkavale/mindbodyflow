@@ -7,7 +7,7 @@ type Message = { role: "user" | "model"; text: string };
 
 const welcome: Message = {
   role: "model",
-  text: "Hi, I’m the Mind Body Flow assistant. Ask me about the training tools, courses, ROAR challenge, sessions, or how to contact Amit.",
+  text: "Hi, I’m the Mind Body Flow assistant. Ask me about the training tools, courses, sessions, or how to contact Amit.",
 };
 
 async function askAssistant(messages: Message[]) {

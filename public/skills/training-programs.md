@@ -38,10 +38,6 @@ For members ready to progress their practice through complex patterns, stronger 
 
 A regular practice blending all three tools. Participants should complete both the Foundation and Advanced courses first. It includes all three tools, ongoing practice, performance tracking, and active engagement.
 
-## ROAR Simulation Protocol
-
-The ROAR Simulation Protocol is a repeatable challenge inspired by the ROAR Games. It develops endurance, functional strength, rotational control, pacing, and mental resilience through a run, a Mace station, repetition, and a finish. The listed charge is INR 800 per head per session.
-
 ## Benefits
 
 The program develops movement quality, rotational strength, coordination, force transfer, asymmetrical loading, acceleration and deceleration, and long-term engagement through measurable skill-based challenges.
