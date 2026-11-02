@@ -66,7 +66,7 @@ export const faqs = [
 export const contact = {
   phone: "+91 9820385016",
   whatsapp: "https://wa.me/919820385016?text=Hi%20Amit%2C%20I%20am%20interested%20in%20the%20Mind%20Body%20Flow%20Rotational%20Training%20Program.",
-  registrationForm: "https://forms.gle/replace-with-your-google-form-link",
+  registrationForm: "https://docs.google.com/forms/d/e/1FAIpQLSe86af26k4WXQiLsZcMMb-v1YZbll1sBMh8ts3EwIp0Kuip0A/viewform?pli=1",
   email: "mindbodyflow9@gmail.com",
   location: "Mind Body Flow",
   instagram: "https://www.instagram.com/amitkavale",
@@ -78,7 +78,7 @@ export const coach = {
   title: "Rotational Performance Coach",
   image: "/images/profile.jpeg",
   intro: "Ex-banker turned fitness coach and hybrid athlete. Amit combines traditional movement systems with modern fitness principles to help people move better, build rotational strength, and develop long-term physical resilience.",
-  credentials: ["NCCA accredited", "NASM Certified Personal Trainer", "Rotational Training Specialist", "40+ rotational flow workshops", "500+ participants coached"],
+  credentials: ["NASM Certified Personal Trainer", "Rotational Training Specialist", "40+ rotational flow workshops", "500+ participants coached"],
   sports: "Badminton · marathon running · cricket · table tennis · squash · swimming",
 };
 
