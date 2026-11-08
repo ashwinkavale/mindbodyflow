@@ -38,6 +38,11 @@ next-dev*.log
 # vercel
 .vercel
 
+# RTS Tracker: its own dependencies and build output
+/rts-tracker/node_modules
+/rts-tracker/dist
+/public/tracker/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

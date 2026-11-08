@@ -73,6 +73,12 @@ export const contact = {
   youtube: "https://www.youtube.com/@amitkavale2466",
 };
 
+export const tracker = {
+  // Same domain by default: the RTS Tracker is built into /public/tracker (see README).
+  // For local development, point this at the tracker's own dev server with NEXT_PUBLIC_TRACKER_URL=http://localhost:5173 in .env.local.
+  signUp: `${(process.env.NEXT_PUBLIC_TRACKER_URL || "/tracker").replace(/\/$/, "")}/signup`,
+};
+
 export const coach = {
   name: "Amit Kavale",
   title: "Rotational Performance Coach",

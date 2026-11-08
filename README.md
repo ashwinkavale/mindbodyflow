@@ -10,6 +10,14 @@ GEMINI_MODEL=gemini-3.6-flash
 ```
 
 
+## RTS Tracker (Sign up)
+
+The **Sign up** button in the header leads to the RTS Tracker, which lives in `rts-tracker/` and is served by this site at `/tracker`.
+
+- **One deploy:** `npm run build` builds the tracker into `public/tracker` (generated and git-ignored), then builds the site. Set `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` in the hosting environment, or in `rts-tracker/.env.local` when building locally.
+- **Local development:** run the tracker's own dev server with `npm run dev:tracker` (http://localhost:5173) next to `npm run dev`, and set `NEXT_PUBLIC_TRACKER_URL=http://localhost:5173` in `.env.local`. Restart `npm run dev` after changing it.
+- **Supabase:** under Authentication → URL Configuration, add `https://<your-domain>/tracker/` (and `http://localhost:5173/` for local work) to Redirect URLs so confirmation emails return to the tracker.
+
 ## Getting Started
 
 First, run the development server:

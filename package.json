@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "dev:all": "node scripts/dev-all.mjs",
+    "dev:tracker": "npm --prefix rts-tracker run dev",
+    "build:tracker": "npm --prefix rts-tracker install --no-audit --no-fund && npm --prefix rts-tracker run build -- --base=/tracker/ --outDir ../public/tracker --emptyOutDir",
+    "build": "npm run build:tracker && next build",
     "start": "next start",
     "lint": "eslint"
   },
@@ -23,5 +26,9 @@
     "eslint-config-next": "16.2.4",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "allowScripts": {
+    "sharp@0.34.5": true,
+    "unrs-resolver@1.11.1": true
   }
 }

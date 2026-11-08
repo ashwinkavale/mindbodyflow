@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Check, Mail, MapPin, Phone, Play, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, Check, Mail, MapPin, Phone, Play, ShieldCheck, UserPlus } from "lucide-react";
 import { MobileNav } from "@/components/MobileNav";
 import { RegistrationModal } from "@/components/RegistrationModal";
 import { TestimonialsVideos } from "@/components/TestimonialsVideos";
 import { AssistantWidget } from "@/components/AssistantWidget";
-import { benefits, coach, contact, faqs, methodCards, navItems, pillars, programLevels, skillBenefits, stats } from "@/data/site";
+import { benefits, coach, contact, faqs, methodCards, navItems, pillars, programLevels, skillBenefits, stats, tracker } from "@/data/site";
 
 function Button({ href, children, dark = false }: { href: string; children: React.ReactNode; dark?: boolean }) {
   return <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className={`inline-flex h-12 items-center justify-center gap-2 rounded-full px-6 text-sm font-bold transition hover:-translate-y-0.5 ${dark ? "bg-[#141414] text-white hover:bg-[#292929]" : "bg-[#d9a441] text-[#141414] hover:bg-[#e8b858]"}`}>{children}<ArrowUpRight size={17} /></a>;
@@ -15,7 +15,7 @@ function Header() {
   return <header className="absolute inset-x-0 top-0 z-40 text-white"><div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
     <Link href="#" className="flex items-center gap-3"><span className="grid size-10 place-items-center rounded-full border border-[#d9a441] text-lg font-black text-[#d9a441]">M</span><span className="text-xs font-bold leading-tight tracking-[.2em]">MIND BODY FLOW<br /><span className="font-normal tracking-[.12em] text-white/55">ROTATIONAL TRAINING</span></span></Link>
     <nav className="hidden items-center gap-7 md:flex">{navItems.map(item => <Link key={item.href} href={item.href} className="text-sm font-medium text-white/70 transition hover:text-white">{item.label}</Link>)}</nav>
-    <div className="hidden md:block"><Button href={contact.whatsapp}>Talk to the coach</Button></div><div className="md:hidden"><MobileNav /></div>
+    <div className="hidden items-center gap-3 md:flex"><Button href={contact.whatsapp}>Talk to the coach</Button><a href={tracker.signUp} className="inline-flex h-12 items-center text-sm font-bold text-white transition hover:text-[#d9a441]">Sign up</a></div><div className="flex items-center gap-2 md:hidden"><a href={tracker.signUp} aria-label="Sign up" title="Sign up" className="hidden size-11 place-items-center rounded-full border border-white/20 text-white min-[360px]:grid"><UserPlus size={20} /></a><MobileNav /></div>
   </div></header>;
 }
 
@@ -56,4 +56,3 @@ export default function Home() {
     <footer className="bg-[#0c0c0c] px-5 py-7 text-xs text-white/45 lg:px-8"><div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"><span>© 2026 Mind Body Flow Rotational Training Program</span><span>Consult your doctor before starting any fitness program.</span></div></footer>
   </>;
 }
-

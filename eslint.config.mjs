@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // The RTS Tracker has its own project, and public/tracker is its build output.
+    "rts-tracker/**",
+    "public/tracker/**",
   ]),
 ]);
 
